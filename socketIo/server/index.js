@@ -8,6 +8,7 @@ const app=express();
 const httpServer=createServer();
 
 app.use(cors());
+
 const io= new Server(httpServer,{
     cors:{
         origin:"http://localhost:3000",
@@ -20,9 +21,12 @@ io.on("connection",(socket)=>{
 console.log(`user connected:${socket.id}`)
 
 socket.on("send_message",(data)=>{
-console.log(data);
-})
-})
+// console.log(data);
+
+//send event
+socket.broadcast.emit("receive_message",data);
+});
+});
 
 //listen to server
 httpServer.listen("8006",()=>{
