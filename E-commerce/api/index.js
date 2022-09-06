@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import Connection from "./db/DBConnection.js";
 import userRoute from "./routes/user_route.js";
+import authRoute from "./routes/auth.js";
 
 const app=express();
 dotenv.config()
@@ -13,6 +14,7 @@ Connection();
 app.use(express.json());
 
 //calling differents routes
+app.use("/api/auth",authRoute)
 app.use("/api/user",userRoute);
 
 
