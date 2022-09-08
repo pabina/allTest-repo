@@ -14,7 +14,7 @@ Connection();
 app.use(express.json());
 
 //calling differents routes
-app.use("/api/auth",authRoute)
+app.use("/api/auth",authRoute);
 app.use("/api/user",userRoute);
 
 
