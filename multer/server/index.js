@@ -15,7 +15,7 @@ const url="mongodb://localhost:27017/mymulter"
 
 
 
-
+//  console.log(first)
 //connection to database
   mongoose.connect(url,{useunifiedTopology:true,useNewurlparser:true})
      console.log("database connected successfully");
